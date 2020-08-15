@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.example.bookapp.data.TestRepository;
 import com.example.bookapp.model.BooksModels;
 
 import java.util.ArrayList;
@@ -34,7 +35,8 @@ public class BookFragment extends Fragment {
         // Inflate the layout for this fragment
         Bundle bundle = this.getArguments();
         if (bundle != null) {
-            models = (BooksModels) bundle.getSerializable("position"); // Key
+            int position = (int) bundle.get("position"); // Key
+            models= TestRepository.getBookByPosition(position);
             booksList.add(models);
         }
         return inflater.inflate(R.layout.fragment_book, container, false);

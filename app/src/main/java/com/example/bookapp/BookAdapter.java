@@ -11,14 +11,15 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.bookapp.interfaces.OnBookClickListener;
 import com.example.bookapp.model.BooksModels;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class BookAdapter extends RecyclerView.Adapter<BookAdapter.ViewHolder> {
 
     private OnBookClickListener onBookClickListener;
 
-    private ArrayList<BooksModels> list;
-    public BookAdapter(ArrayList<BooksModels> list) {
+    private List<BooksModels> list;
+
+    public BookAdapter(List<BooksModels> list) {
         this.list = list;
     }
 
